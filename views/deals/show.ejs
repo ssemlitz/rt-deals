@@ -1,0 +1,34 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Details!</h1>
+    <h2>Add a deal!</h2>
+    <form action="/deals" method="POST">
+      <label>
+        Name: <%= deal.name %> 
+      </label>
+      <br>
+      <label>
+        Original Price: $ <%= deal.origPrice %> 
+      </label>
+      <br> 
+      <label>
+        Sale Price: $ <%= deal.salePrice %> 
+      </label> 
+      <br>
+      <label>
+        Deal Link: <a target="_blank" href="<%= deal.storeLink %>"><%= deal.storeLink %></a>
+      </label> 
+      <br>
+      <label>
+        Details: <%= deal.details %> 
+      </label>
+      <br>
+      <% if (user) { %>
+        <button>Delete Deal</button>
+      <% } %>
+    </form>
+</section>
+
+<%- include('../partials/footer') %>

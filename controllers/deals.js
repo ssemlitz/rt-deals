@@ -33,8 +33,24 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  Deal.findById(req.params.id)
+  .populate()
+  .then(deal => {
+    res.render('deals/show', {
+      deal,
+      title: 'Deal Details'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/deals')
+  })
+}
+
 export {
   index,
   create,
   newDeal as new,
+  show,
 }

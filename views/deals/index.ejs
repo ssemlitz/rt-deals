@@ -5,8 +5,17 @@
   <h1>Deals!</h1>
   <h2>Retail therapy is the best form of therapy</h2>
 
+  <ul>
+    <% deals.forEach(deal => { %> 
+      <li> 
+        <a href="/deals/<%= deal._id %>"><%= deal.name %></a>          
+        <%= deal.origPrice %>  
+        <%= deal.salePrice %>  
+        <a target="_blank" href="<%= deal.storeLink %>"><%= deal.storeLink %></a>  
+      </li>
+    <% }) %> 
+  </ul>
 
-  
 </section>
 
 <%- include('../partials/footer') %>

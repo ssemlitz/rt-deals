@@ -8,6 +8,8 @@ router.get('/', dealsCtrl.index)
 
 router.get('/new', isLoggedIn, dealsCtrl.new)
 
+router.get('/:id', dealsCtrl.show)
+
 router.post('/', isLoggedIn , dealsCtrl.create)
 
 export {
