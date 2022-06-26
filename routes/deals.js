@@ -6,7 +6,7 @@ const router = Router()
 
 router.get('/', dealsCtrl.index)
 
-router.get('/new', dealsCtrl.new)
+router.get('/new', isLoggedIn, dealsCtrl.new)
 
 router.post('/', isLoggedIn , dealsCtrl.create)
 

@@ -21,7 +21,16 @@ function newDeal(req, res) {
 }
 
 function create(req, res) {
-  console.log('CREATE A DEAL')
+  req.body.owner = req.user.profile_id
+  console.log('HERE IS THE REQ BODY******', req.body)
+  Deal.create(req.body)
+  .then(deal => {
+    res.redirect('/deals')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/deals')
+  })
 }
 
 export {
