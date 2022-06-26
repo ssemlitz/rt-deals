@@ -4,11 +4,16 @@
 <section>
   <h1>Deals!</h1>
   <h2>Retail therapy is the best form of therapy</h2>
-	<ul>
-  <% deals.forEach(taco => { %>
-    <!-- <li><%= taco.name %> is <%= taco.tasty ? 'tasty' : 'not tasty' %></li>
-  <% }) %> -->
-  </ul>
+  <% if (user) { %>
+    <h2>Add a deal!</h2>
+    <form action="/deals" method="POST">
+      <label>
+        Deal: 
+        <input type="text" name="name" autocomplete="off">
+      </label> 
+
+    </form>
+  <% } %>
 </section>
 
 <%- include('../partials/footer') %>

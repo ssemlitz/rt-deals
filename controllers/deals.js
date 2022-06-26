@@ -14,6 +14,18 @@ function index(req, res) {
   })
 }
 
+function newDeal(req, res) {
+  res.render('deals/new', {
+    title: 'Add Deal'
+  })
+}
+
+function create(req, res) {
+  console.log('CREATE A DEAL')
+}
+
 export {
-  index
+  index,
+  create,
+  newDeal as new,
 }

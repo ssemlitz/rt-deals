@@ -1,0 +1,35 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Deals!</h1>
+  <h2>Retail therapy is the best form of therapy</h2>
+  <% if (user) { %>
+    <h2>Add a deal!</h2>
+    <form action="/deals" method="POST">
+      <label>
+        Deal: 
+        <input type="text" name="name" autocomplete="off">
+      </label>
+      <label>
+        Original Price: $
+        <input type="number" name="origPrice" autocomplete="off">
+      </label> 
+      <label>
+        Sale Price: $
+        <input type="number" name="salePrice" autocomplete="off">
+      </label> 
+      <label>
+        Deal Link:
+        <input type="text" name="storeLink" autocomplete="off">
+      </label> 
+      <label>
+        <Details></Details>:
+        <input type="text" name="storeLink" autocomplete="off">
+      </label>
+      <button type="submit">Add Deal</button> 
+    </form>
+  <% } %>
+</section>
+
+<%- include('../partials/footer') %>

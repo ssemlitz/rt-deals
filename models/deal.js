@@ -10,6 +10,7 @@ const commentSchema = new Schema({
 })
 
 const dealSchema = new Schema({
+  name: {type: String, required: true},
   origPrice: {type: Number, required: true},
   salePrice: {type: Number, required: true},
   storeLink: {type: String, required: true},
