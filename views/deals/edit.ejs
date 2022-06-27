@@ -1,0 +1,35 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Edit your deal!</h1>
+
+  <% if (user) { %>
+    <h2>Edit your deal!</h2>
+    <form action="/deals/<%= deal._id %>?_method=PUT" method="POST">
+      <label>
+        Deal: 
+        <input type="text" name="name" value="<%= deal.name %>" autocomplete="off">
+      </label>
+      <label>
+        Original Price: $
+        <input type="number" name="origPrice" value="<%= deal.origPrice %>" autocomplete="off">
+      </label> 
+      <label>
+        Sale Price: $
+        <input type="number" name="salePrice" value="<%= deal.salePrice %>" autocomplete="off">
+      </label> 
+      <label>
+        Deal Link:
+        <input type="url" name="storeLink" value="<%= deal.storeLink %>" autocomplete="off">
+      </label> 
+      <label>
+        Details:
+        <input type="text" name="details" value="<%= deal.details %>" autocomplete="off">
+      </label>
+        <button type="submit">Update Deal</button> 
+    </form>
+  <% } %>
+</section>
+
+<%- include('../partials/footer') %>

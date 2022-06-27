@@ -22,7 +22,6 @@ function newDeal(req, res) {
 
 function create(req, res) {
   req.body.owner = req.user.profile_id
-  console.log('HERE IS THE REQ BODY******', req.body)
   Deal.create(req.body)
   .then(deal => {
     res.redirect('/deals')
@@ -48,9 +47,36 @@ function show(req, res) {
   })
 }
 
+function edit(req, res) {
+  Deal.findById(req.params.id)
+  .then(deal => {
+    res.render('deals/edit', {
+      deal,
+      title: 'Edit Deal'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/deals')
+  })
+}
+
+function update(req, res) {
+  Deal.findByIdAndUpdate(req.params.id, req.body)
+  .then(deal => {
+    res.redirect(`/deals/${deal._id}`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/deals')
+  })
+}
+
 export {
   index,
   create,
   newDeal as new,
   show,
+  edit,
+  update,
 }

@@ -3,7 +3,6 @@
 
 <section>
   <h1>Details!</h1>
-    <h2>Add a deal!</h2>
     <form action="/deals" method="POST">
       <label>
         Name: <%= deal.name %> 
@@ -25,10 +24,13 @@
         Details: <%= deal.details %> 
       </label>
       <br>
+    </form>
       <% if (user) { %>
+        <form action="/deals/<%= deal._id %>/edit" method="GET">
+          <button>Edit Deal</button>
+        </form>
         <button>Delete Deal</button>
       <% } %>
-    </form>
 </section>
 
 <%- include('../partials/footer') %>
