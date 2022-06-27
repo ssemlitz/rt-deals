@@ -21,7 +21,7 @@ function newDeal(req, res) {
 }
 
 function create(req, res) {
-  req.body.owner = req.user.profile_id
+  req.body.author = req.user.profile._id
   Deal.create(req.body)
   .then(deal => {
     res.redirect('/deals')
@@ -72,6 +72,24 @@ function update(req, res) {
   })
 }
 
+function deleteDeal(req, res) {
+  Deal.findById(req.params.id)
+  .then(deal => {
+    if (deal.author.equals(req.user.profile._id)) {
+      deal.delete()
+      .then(() => {
+        res.redirect('/deals')
+      })
+    } else {
+      throw new Error ('NOT AUTHORIZED')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/deals')
+  })
+}
+
 export {
   index,
   create,
@@ -79,4 +97,5 @@ export {
   show,
   edit,
   update,
+  deleteDeal as delete
 }

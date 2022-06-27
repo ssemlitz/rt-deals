@@ -29,8 +29,11 @@
         <form action="/deals/<%= deal._id %>/edit" method="GET">
           <button>Edit Deal</button>
         </form>
-        <button>Delete Deal</button>
+        <form action="/deals/<%= deal._id %>?_method=DELETE" method="POST"> 
+          <button>Delete Deal</button>
+        </form> 
       <% } %>
+      <form action="/profiles/saveDeal"></form>
 </section>
 
 <%- include('../partials/footer') %>

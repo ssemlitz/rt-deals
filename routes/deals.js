@@ -16,6 +16,8 @@ router.post('/', isLoggedIn , dealsCtrl.create)
 
 router.put('/:id', isLoggedIn, dealsCtrl.update)
 
+router.delete('/:id', isLoggedIn, dealsCtrl.delete)
+
 export {
   router
 }
