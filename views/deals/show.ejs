@@ -62,7 +62,7 @@
           <td><%= comment.content %></td>
           <% if (user) { %>
             <td>
-              <form action="/profiles/comments/<% comment._id %>">
+              <form action="/deals/:id/comments/<% comment._id %>">
                 <button>Edit</button>
               </form>
               <form action="">

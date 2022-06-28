@@ -62,9 +62,16 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-  Deal.findByIdAndUpdate(req.params.id, req.body)
+  Deal.findById(req.params.id)
   .then(deal => {
-    res.redirect(`/deals/${deal._id}`)
+    if (deal.author.equals(req.user.profile._id)) {
+      deal.updateOne(req.body, {new: true})
+      .then(updatedDeal => {
+        res.redirect(`/deals/${deal._id}`)
+      })
+    } else {
+      throw new Error ('NOT AUTHORIZED')
+    }
   })
   .catch(err => {
     console.log(err)
