@@ -32,7 +32,7 @@
       <form action="/deals/<%= deal._id %>?_method=DELETE" method="POST"> 
         <button>Delete Deal</button>
       </form> 
-      <% } %>
+    <% } %>
       <form action="/profiles/saveDeal" method="POST">
         <input type="text" name="dealId" value="<%= deal._id %>" hidden>
         <button type="submit">Save Deal</button>
@@ -46,22 +46,40 @@
   <button type="submit">Add</button>
 </form>
 
-
-
-
-
 <% if (deal.comments.length) { %>
-  <% deal.comments.forEach(function(comment) { %>
-    <%= comment.createdAt.toLocaleDateString() %>
-    <%= comment.content %>
-    <br>
-  <% }) %>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Comment</th>
+        <th hidden>Edit/Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% deal.comments.forEach(function(comment) { %>
+        <tr>
+          <td><%= comment.createdAt.toLocaleDateString() %></td>
+          <td><%= comment.content %></td>
+          <% if (user) { %>
+            <td>
+              <form action="/profiles/comments/<% comment._id %>">
+                <button>Edit</button>
+              </form>
+              <form action="">
+                <button>Delete</button>
+              </form>
+            </td>
+          <% } %>
+        </tr>
+      <% }) %>
+      <tr>
+        <td colspan="2"></td>
+      </tr>
+    </tbody>
+  </table>
 <% } else { %>
   <h3>No Comments Yet</h3>
 <% } %>
-
-<!-- type comment and add it via button
-forEach loop to show number of comments
-author of comment has ability to delete/edit comment -->
+</main>
 
 <%- include('../partials/footer') %>
