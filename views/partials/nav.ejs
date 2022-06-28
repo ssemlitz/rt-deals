@@ -6,9 +6,9 @@
 <nav>
   <a href="/deals/">ALL DEALS</a>
   <a href="/deals/new">ADD DEALS</a>
-  <a href="/profiles">DEALERS</a>
-  <a href="/profiles">SAVED DEALS</a>
+  <a href="/profiles">DEALERS</a>  
   <% if (user) { %>
+    <a href="/profiles/<%= user.profile._id %>">SAVED DEALS</a>
     <a href="/auth/logout">LOGOUT</a>
   <% } else { %>
     <a href="/auth/google" class="siwg-link">

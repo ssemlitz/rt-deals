@@ -1,0 +1,22 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <% if (profile.avatar) { %>
+    <div>
+      <img
+        class="profile-avatar"
+        src="<%= profile.avatar %>"
+        alt="<%= profile.name %>'s avatar"
+      >
+    </div>
+  <% } %>
+  <% if (profile.savedDeals.length) { %> 
+    <% profile.savedDeals.forEach(deal => { %>
+      <a href="/deals/<%= deal._id %>"><%= deal.name %></a>
+    <% }) %> 
+  <% } else { %>
+    <h2>You don't have any saved deals.</h2>
+  <% } %>
+
+  <%- include('../partials/footer') %>

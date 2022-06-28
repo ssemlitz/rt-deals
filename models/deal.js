@@ -15,7 +15,6 @@ const dealSchema = new Schema({
   salePrice: {type: Number, required: true},
   storeLink: {type: String, required: true},
   details: {type: String, required: true},
-  // image: {type: String,}
   author: {type: Schema.Types.ObjectId, ref: "Profile"},
   comments: [commentSchema],
 }, {
