@@ -48,6 +48,18 @@
 
 
 
+
+
+<% if (deal.comments.length) { %>
+  <% deal.comments.forEach(function(comment) { %>
+    <%= comment.createdAt.toLocaleDateString() %>
+    <%= comment.content %>
+    <br>
+  <% }) %>
+<% } else { %>
+  <h3>No Comments Yet</h3>
+<% } %>
+
 <!-- type comment and add it via button
 forEach loop to show number of comments
 author of comment has ability to delete/edit comment -->
