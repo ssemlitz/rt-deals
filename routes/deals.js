@@ -14,6 +14,8 @@ router.get('/:id/edit', isLoggedIn, dealsCtrl.edit)
 
 router.post('/', isLoggedIn , dealsCtrl.create)
 
+router.post('/:id/comments', isLoggedIn, dealsCtrl.addComment)
+
 router.put('/:id', isLoggedIn, dealsCtrl.update)
 
 router.delete('/:id', isLoggedIn, dealsCtrl.delete)

@@ -90,6 +90,21 @@ function deleteDeal(req, res) {
   })
 }
 
+function addComment(req, res) {
+  Deal.findById(req.params.id)
+  .then(deal => {
+    deal.comments.push(req.body)
+    deal.save()
+    .then(() => {
+      res.redirect(`/deals/${deal._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/deals')
+  })
+}
+
 export {
   index,
   create,
@@ -97,5 +112,6 @@ export {
   show,
   edit,
   update,
-  deleteDeal as delete
+  deleteDeal as delete,
+  addComment
 }

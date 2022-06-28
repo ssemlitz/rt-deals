@@ -39,4 +39,17 @@
       </form>
 </section>
 
+<form action="/deals/<%= deal._id %>/comments" method="POST">
+  <h2>Comments</h2>
+  <h3>Add a comment</h3>
+  <textarea name="content" type="text" placeholder="Add a comment..."></textarea>
+  <button type="submit">Add</button>
+</form>
+
+
+
+<!-- type comment and add it via button
+forEach loop to show number of comments
+author of comment has ability to delete/edit comment -->
+
 <%- include('../partials/footer') %>
