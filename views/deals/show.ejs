@@ -62,11 +62,11 @@
           <td><%= comment.content %></td>
           <% if (user) { %>
             <td>
-              <form action="/deals/:id/comments/<% comment._id %>">
+              <form action="/deals/<%= deal._id %>/comments/<%= comment._id %>/edit">
                 <button>Edit</button>
               </form>
-              <form action="">
-                <button>Delete</button>
+              <form action="/deals/<%= deal._id %>/comments/<%= comment._id %>?_method=Delete" method="POST">
+                <button type="submit">Delete</button>
               </form>
             </td>
           <% } %>

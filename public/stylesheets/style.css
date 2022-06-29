@@ -91,3 +91,7 @@ nav > a {
 .profile-avatar {
   margin-top: 50px;
 }
+
+.card {
+  width: 200px;
+}

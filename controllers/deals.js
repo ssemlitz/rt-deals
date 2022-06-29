@@ -21,6 +21,9 @@ function newDeal(req, res) {
 }
 
 function create(req, res) {
+  for (let key in req.body) {
+	  if (req.body[key] === '') delete req.body[key]
+	}
   req.body.author = req.user.profile._id
   Deal.create(req.body)
   .then(deal => {
@@ -112,6 +115,25 @@ function addComment(req, res) {
   })
 }
 
+function deleteComment(req, res) {
+  Deal.findById(req.params.dealId)
+  .then(deal => {
+    deal.comments.remove({_id: req.params.commentId})
+    deal.save()
+    .then(() => {
+      res.redirect(`/deals/${deal._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/deals')
+  })
+}
+
+function editComment(req, res) {
+  console.log('edit')
+}
+
 export {
   index,
   create,
@@ -120,5 +142,7 @@ export {
   edit,
   update,
   deleteDeal as delete,
-  addComment
+  addComment,
+  deleteComment,
+  editComment
 }
