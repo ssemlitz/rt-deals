@@ -13,18 +13,20 @@
   <% } %>
   <% if (profile.savedDeals.length) { %> 
     <% profile.savedDeals.forEach(deal => { %>
-      <div class="card">
-        <img src="<%= deal.image %>" alt="Card image cap">
-        <div class="card-body">
-          <h4 class="card-title"><%= deal.name %></h4>
-          <h5><s>$<%= deal.origPrice %></s></h5>
-          <h3>$<%= deal.salePrice %></h3>
-          <a href="/deals/<%= deal._id %>" class="btn btn-primary">Details</a>
-          <form action="/profiles/<%= profile._id %>/savedDeals/<%= deal._id %>?_method=DELETE" method="POST">
-            <button class="btn btn-danger" type="submit">Delete</button>
-          </form>
+      <div class="card-columns" id="profile-cards">
+        <div class="card">
+          <img src="<%= deal.image %>" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title"><%= deal.name %></h4>
+            <h5><s>$<%= deal.origPrice %></s></h5>
+            <h3>$<%= deal.salePrice %></h3>
+            <a href="/deals/<%= deal._id %>" class="btn btn-primary">Details</a>
+            <form action="/profiles/<%= profile._id %>/savedDeals/<%= deal._id %>?_method=DELETE" method="POST">
+              <button class="btn btn-danger" type="submit">Delete</button>
+            </form>
+          </div>
         </div>
-      </div>
+    </div>
     <% }) %> 
   <% } else { %>
     <h2>You don't have any saved deals.</h2>

@@ -7,18 +7,22 @@
 
   <ul>
     <% deals.forEach(deal => { %> 
-      <div class="card text-center animate__animated animate__fadeInUpBig">
-        <img class="card-img-top" src="<%= deal.image %>" alt="Card image cap">
-        <div class="card-body">
-          <h4 class="card-title"><%= deal.name %></h4>
-          <h5><s>$<%= deal.origPrice %></s></h5>
-          <h3>$<%= deal.salePrice %></h3>
-          <div>
-            <a href="/deals/<%= deal._id %>" class="btn btn-primary">Details</a>
-            <form class="save-btn" action="/profiles/saveDeal" method="POST">
-              <input type="text" name="dealId" value="<%= deal._id %>" hidden>
-              <button class="btn btn-secondary" type="submit">Save Deal</button>
-            </form>
+      <div class="card-columns">
+        <div class="card-deck">
+          <div class="card text-center animate__animated animate__fadeInUpBig">
+            <img class="card-img-top" src="<%= deal.image %>" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title"><%= deal.name %></h4>
+              <h5><s>$<%= deal.origPrice %></s></h5>
+              <h3>$<%= deal.salePrice %></h3>
+              <div>
+                <a href="/deals/<%= deal._id %>" class="btn btn-primary">Details</a>
+                <form class="save-btn" action="/profiles/saveDeal" method="POST">
+                  <input type="text" name="dealId" value="<%= deal._id %>" hidden>
+                  <button class="btn btn-secondary" type="submit">Save Deal</button>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
