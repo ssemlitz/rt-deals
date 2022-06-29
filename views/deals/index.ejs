@@ -2,19 +2,21 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <h1>Deals!</h1>
-  <h2>Retail therapy is the best form of therapy</h2>
-
-  <ul>
+  <div class="all-deals-headers">
+    <h1>Deals!</h1>
+    <h2>Retail therapy is the best form of therapy</h2>
+  </div>
+  
+  <div class="all-deals-cards">
     <% deals.forEach(deal => { %> 
       <div class="card-columns">
         <div class="card-deck">
-          <div class="card text-center animate__animated animate__fadeInUpBig">
+          <div class="card text-center animate__animated animate__fadeInUpBig shadow p-3 mb-5 bg-white rounded">
             <img class="card-img-top" src="<%= deal.image %>" alt="Card image cap">
             <div class="card-body">
               <h4 class="card-title"><%= deal.name %></h4>
               <h5><s>$<%= deal.origPrice %></s></h5>
-              <h3>$<%= deal.salePrice %></h3>
+              <h3 class="sale-price">🔥$<%= deal.salePrice %>🔥</h3>
               <div>
                 <a href="/deals/<%= deal._id %>" class="btn btn-primary">Details</a>
                 <form class="save-btn" action="/profiles/saveDeal" method="POST">
@@ -27,7 +29,7 @@
         </div>
       </div>
     <% }) %> 
-  </ul>
+    </div>
 
 </section>
 

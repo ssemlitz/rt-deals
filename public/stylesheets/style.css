@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background-color: gray;
+  background-color: #FAF3F3;
   /* Use a system font, if none are available use an available sans-sarif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -20,7 +20,7 @@ body {
 }
 
 nav {
-  background-color: white;
+  background-color: #DA7F8F;
   font-size: 16px;
   display: flex;
   justify-content: center;
@@ -45,8 +45,17 @@ h3 {
   font-size: 24px;
 }
 
+h1, 
+h2,
+h3,
+h4,
+h5 {
+  color: 	#1f3b61;
+}
+
 ul {
   list-style-type: none;
+  margin-left: 0;
 }
 
 p, label, li, button, input {
@@ -55,6 +64,7 @@ p, label, li, button, input {
 
 label {
   font-weight: bold;
+  margin: 10px 0;
 }
 
 section {
@@ -62,7 +72,11 @@ section {
 }
 
 a {
-  color: #00B7FF;
+  color: #227393;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 pre {
@@ -90,6 +104,7 @@ nav > a {
 
 .profile-avatar {
   margin-top: 50px;
+  border-radius: 10px;
 }
 
 .card {
@@ -103,10 +118,63 @@ nav > a {
   justify-content: space-between;
 }
 
+.card-image {
+  border-radius: 5px;
+}
+
 .card-columns {
   display: inline-block;
 }
 
-#profile-cards {
-  display: inline-block;
+.sale-price {
+  color: red;
+}
+
+.btn {
+  width: 150px;
+  margin: 10px auto;
+}
+
+.profile-cards {
+  display: flex;
+  flex-direction: row;
+}
+
+.all-deals-headers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.all-deals-cards,
+.saved-deals-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.add-deal-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#profile-avatar {
+  display: flex;
+  justify-content: center;
+}
+
+#index-profile-avatar {
+  width: 96px;
+  height: 96px;
+  display: flex;
+  justify-content: center;
+}
+
+#profile-saved-deals {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
 }

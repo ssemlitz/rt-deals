@@ -6,9 +6,10 @@
   <div class="cardContainer">
     <% profiles.forEach(profile => { %>
       <a class="text-decoration-none" href="/profiles/<%= profile._id %>">
-        <div class="card">
+        <div class="card profile-cards">
           <% if (profile.avatar) { %>
-            <img 
+            <img
+              id="index-profile-avatar" 
               src="<%= profile.avatar %>" 
               alt="<%= profile.name %>'s avatar"
             >
@@ -19,7 +20,7 @@
             >
           <% } %>
           <div class="card-body">
-            <h1 class="card-title"><%= profile.name %></h1>
+            <h1 class="card-title index-profile-name"><%= profile.name %></h1>
           </div>
         </div>
       </a>
