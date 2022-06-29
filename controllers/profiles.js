@@ -47,7 +47,7 @@ function index(req, res) {
 function deleteDeal(req, res) {
   Profile.findById(req.user.profile._id)
   .then(profile => {
-    profile.deals.remove({_id: req.params.id})
+    profile.savedDeals.remove({_id: req.params.savedDealId})
     profile.save()
     .then(() => {
       res.redirect(`/profiles/${req.user.profile._id}`)
@@ -63,5 +63,5 @@ export {
   saveDeal,
   show,
   index,
-  deleteDeal
+  deleteDeal as delete
 }

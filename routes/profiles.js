@@ -10,7 +10,7 @@ router.get('/:id', isLoggedIn, profilesCtrl.show)
 
 router.post('/saveDeal', isLoggedIn, profilesCtrl.saveDeal)
 
-router.delete('/savedDeals/:id', isLoggedIn, profilesCtrl.deleteDeal)
+router.delete('/:profileId/savedDeals/:savedDealId', isLoggedIn, profilesCtrl.delete)
 
 export {
   router

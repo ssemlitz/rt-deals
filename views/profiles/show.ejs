@@ -20,8 +20,8 @@
           <h5><s>$<%= deal.origPrice %></s></h5>
           <h3>$<%= deal.salePrice %></h3>
           <a href="/deals/<%= deal._id %>" class="btn btn-primary">Details</a>
-          <form action="/profiles/savedDeals/<%= deal._id %>?_method=DELETE method="POST">
-            <button class="btn btn-primary" type="submit">Delete</button>
+          <form action="/profiles/<%= profile._id %>/savedDeals/<%= deal._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger" type="submit">Delete</button>
           </form>
         </div>
       </div>

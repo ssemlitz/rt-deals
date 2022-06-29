@@ -25,7 +25,7 @@
       </label>
       <br>
     </form>
-    <% if (user) { %>
+    <% if (deal.author.equals(user?.profile._id)) { %>
       <form action="/deals/<%= deal._id %>/edit" method="GET">
         <button>Edit Deal</button>
       </form>
@@ -33,10 +33,13 @@
         <button>Delete Deal</button>
       </form> 
     <% } %>
+    <% if (user) { %> 
       <form action="/profiles/saveDeal" method="POST">
         <input type="text" name="dealId" value="<%= deal._id %>" hidden>
         <button type="submit">Save Deal</button>
       </form>
+
+    <% } %> 
 </section>
 
 <form action="/deals/<%= deal._id %>/comments" method="POST">
@@ -62,9 +65,9 @@
           <td><%= comment.content %></td>
           <% if (user) { %>
             <td>
-              <form action="/deals/<%= deal._id %>/comments/<%= comment._id %>/edit">
+              <!-- <form action="/deals/<%= deal._id %>/comments/<%= comment._id %>/edit">
                 <button>Edit</button>
-              </form>
+              </form> -->
               <form action="/deals/<%= deal._id %>/comments/<%= comment._id %>?_method=Delete" method="POST">
                 <button type="submit">Delete</button>
               </form>

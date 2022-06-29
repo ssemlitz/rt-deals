@@ -15,7 +15,7 @@ const dealSchema = new Schema({
   salePrice: {type: Number, required: true},
   storeLink: {type: String, required: true},
   details: {type: String, required: true},
-  image: {type: String, default: 'https://imgur.com/5n8vt6i'},
+  image: {type: String, default: '/images/sale.jpg'},
   author: {type: Schema.Types.ObjectId, ref: "Profile"},
   comments: [commentSchema],
 }, {
