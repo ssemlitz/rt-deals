@@ -16,9 +16,10 @@
 
 ### Attributions  
 
-Default Deal Image - Photo by Karolina Grabowska: https://www.pexels.com/photo/person-holding-a-red-balloon-with-percentage-symbol-5650025/
-
-Favicon - Sale icons created by Pixel perfect - Flaticon
+- [BootStrap](https://getbootstrap.com/)
+- [Animate.style](https://animate.style/) 
+- Default Deal Image - Photo by Karolina Grabowska: https://www.pexels.com/photo/person-holding-a-red-balloon-with-percentage-symbol-5650025/
+- Favicon - Sale icons created by Pixel perfect - Flaticon
 
 
 ### Future Goals
