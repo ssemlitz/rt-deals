@@ -245,6 +245,11 @@ nav > a:hover {
   background-color: lightgrey;
 }
 
+.btn-success {
+  background-color: rgb(34, 211, 34);
+  border-color: rgb(34, 211, 34);
+}
+
 .comment-post {
   display: flex;
   flex-direction: row;

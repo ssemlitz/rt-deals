@@ -15,4 +15,7 @@ Photo by <a href="https://unsplash.com/@tamanna_rumee?utm_source=unsplash&utm_me
 Photo by Karolina Grabowska: https://www.pexels.com/photo/person-holding-a-red-balloon-with-percentage-symbol-5650025/
 
 
+favicon: <a href="https://www.flaticon.com/free-icons/sale" title="sale icons">Sale icons created by Pixel perfect - Flaticon</a>
+
+
 You're done!
