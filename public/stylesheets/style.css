@@ -260,3 +260,8 @@ div > textarea {
   border-radius: 5px;
   width: 550px;
 }
+
+#profile-no-deals {
+  display: flex;
+  justify-content: center;
+}
