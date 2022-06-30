@@ -1,9 +1,9 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<section>
+<section class="details-section">
   <h1>Details!</h1>
-    <form action="/deals" method="POST">
+    <form class="details-form" action="/deals" method="POST">
       <label>
         Name: <%= deal.name %> 
       </label>
@@ -17,72 +17,91 @@
       </label> 
       <br>
       <label>
-        Deal Link: <a target="_blank" href="<%= deal.storeLink %>"><%= deal.storeLink %></a>
-      </label> 
-      <br>
-      <label>
         Details: <%= deal.details %> 
       </label>
       <br>
+      <label>
+        See Deal Here: <a target="_blank" href="<%= deal.storeLink %>">DEAL LINK</a>
+      </label> 
+      <br>
     </form>
-    <% if (deal.author.equals(user?.profile._id)) { %>
-      <form action="/deals/<%= deal._id %>/edit" method="GET">
-        <button>Edit Deal</button>
-      </form>
-      <form action="/deals/<%= deal._id %>?_method=DELETE" method="POST"> 
-        <button>Delete Deal</button>
-      </form> 
-    <% } %>
-    <% if (user) { %> 
-      <form action="/profiles/saveDeal" method="POST">
-        <input type="text" name="dealId" value="<%= deal._id %>" hidden>
-        <button type="submit">Save Deal</button>
-      </form>
-
-    <% } %> 
+    <div class="details-btns-grouping">
+      <% if (deal.author.equals(user?.profile._id)) { %>
+        <form action="/deals/<%= deal._id %>/edit" method="GET">
+          <button class="details-btn btn btn-info">Edit Deal</button>
+        </form>
+        <form action="/deals/<%= deal._id %>?_method=DELETE" method="POST"> 
+          <button class="details-btn btn btn-danger">Delete Deal</button>
+        </form> 
+      <% } %>
+      <% if (user) { %> 
+        <form action="/profiles/saveDeal" method="POST">
+          <input type="text" name="dealId" value="<%= deal._id %>" hidden>
+          <button class="details-btn btn btn-success" type="submit">Save Deal</button>
+        </form>
+      <% } %> 
+    </div>
 </section>
 
-<form action="/deals/<%= deal._id %>/comments" method="POST">
-  <h2>Comments</h2>
-  <h3>Add a comment</h3>
-  <textarea name="content" type="text" placeholder="Add a comment..."></textarea>
-  <button type="submit">Add</button>
-</form>
+<section class="comments-section">
+  <form action="/deals/<%= deal._id %>/comments" method="POST">
+    <h2>Comments</h2>
+    <h3>Add a comment</h3>
+    <textarea name="content" type="text" placeholder="Add a comment..."></textarea>
+    <button type="submit">Add</button>
+  </form>
 
-<% if (deal.comments.length) { %>
-  <table>
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Comment</th>
-        <th hidden>Edit/Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% deal.comments.forEach(function(comment) { %>
+  <% if (deal.comments.length) { %>
+    <ul>
+    <% deal.comments.forEach(function(comment) { %>
+      <li>
+        <%= comment.content %>
+      </li>
+    <% }) %>
+    </ul>
+      <% } else { %>
+  
+      <% } %>
+
+
+
+
+
+
+
+  <% if (deal.comments.length) { %>
+    <table>
+      <thead>
         <tr>
-          <td><%= comment.createdAt.toLocaleDateString() %></td>
-          <td><%= comment.content %></td>
-          <% if (user) { %>
-            <td>
-              <!-- <form action="/deals/<%= deal._id %>/comments/<%= comment._id %>/edit">
-                <button>Edit</button>
-              </form> -->
-              <form action="/deals/<%= deal._id %>/comments/<%= comment._id %>?_method=Delete" method="POST">
-                <button type="submit">Delete</button>
-              </form>
-            </td>
-          <% } %>
+          <th>Date</th>
+          <th>Comment</th>
+          <th hidden>Edit/Delete</th>
         </tr>
-      <% }) %>
-      <tr>
-        <td colspan="2"></td>
-      </tr>
-    </tbody>
-  </table>
-<% } else { %>
-  <h3>No Comments Yet</h3>
-<% } %>
+      </thead>
+      <tbody>
+        <% deal.comments.forEach(function(comment) { %>
+          <tr>
+            <td><%= comment.createdAt.toLocaleDateString() %></td>
+            <td><%= comment.content %></td>
+            <% if (user) { %>
+              <td>
+                <form action="/deals/<%= deal._id %>/comments/<%= comment._id %>?_method=Delete" method="POST">
+                  <button type="submit">Delete</button>
+                </form>
+              </td>
+            <% } %>
+          </tr>
+        <% }) %>
+        <tr>
+          <td colspan="2"></td>
+        </tr>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h3>No Comments Yet</h3>
+  <% } %>
+</section>
+
 </main>
 
 <%- include('../partials/footer') %>

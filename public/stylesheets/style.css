@@ -90,6 +90,12 @@ nav > a {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #1f3b61;
+}
+
+nav > a:hover {
+  text-decoration: underline;
+  color: #1f3b61;
 }
 
 .btn {
@@ -138,6 +144,7 @@ nav > a {
 .profile-cards {
   display: flex;
   flex-direction: row;
+  background-color: #E1E5EA;
 }
 
 .all-deals-headers {
@@ -161,6 +168,23 @@ nav > a {
   flex-direction: column;
 }
 
+.add-deal-btn {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: #1b2e60;
+  border-style: none;
+}
+
+.add-deal-btn:hover {
+  background-color: #2e5cdc;
+}
+
+.btn-secondary {
+  background-color: lightgrey;
+  border-color: lightgrey;
+}
+
 #profile-avatar {
   display: flex;
   justify-content: center;
@@ -177,4 +201,28 @@ nav > a {
   display: flex;
   justify-content: center;
   margin: 20px 0;
+}
+
+.details-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.details-btns-grouping {
+  display: flex;
+  flex-direction: row;
+}
+
+.details-btn {
+  margin: 10px;
+}
+
+.comments-section,
+.details-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

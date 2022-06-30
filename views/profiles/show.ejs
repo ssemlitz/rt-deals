@@ -22,7 +22,7 @@
               <h4 class="card-title"><%= deal.name %></h4>
               <h5><s>$<%= deal.origPrice %></s></h5>
               <h3 class="sale-price">🔥$<%= deal.salePrice %>🔥</h3>
-              <a href="/deals/<%= deal._id %>" class="btn btn-primary">Details</a>
+              <a href="/deals/<%= deal._id %>" class="btn btn-secondary">Details</a>
               <form action="/profiles/<%= profile._id %>/savedDeals/<%= deal._id %>?_method=DELETE" method="POST">
                 <button class="btn btn-danger" type="submit">Delete</button>
               </form>
