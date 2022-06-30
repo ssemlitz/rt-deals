@@ -90,12 +90,12 @@ nav > a {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #1f3b61;
+  color: #2F4858;
 }
 
 nav > a:hover {
   text-decoration: underline;
-  color: #1f3b61;
+  color: #2F4858;
 }
 
 .btn {
@@ -235,4 +235,23 @@ nav > a:hover {
 .comment-card {
   width: 80%;
   max-width: 700px;
+}
+
+.btn-light {
+  margin: 0;
+}
+
+.btn-light:hover {
+  background-color: lightgrey;
+}
+
+.comment-post {
+  display: flex;
+  flex-direction: row;
+}
+
+div > textarea {
+  display: block;
+  border-radius: 5px;
+  width: 550px;
 }

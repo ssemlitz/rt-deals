@@ -54,8 +54,10 @@
   <form action="/deals/<%= deal._id %>/comments" method="POST">
     <h2>Comments</h2>
     <h3>Add a comment</h3>
-    <textarea class="comment-text-area" name="content" type="text" placeholder="Add a comment..."></textarea>
-    <button type="submit">Add</button>
+    <div class="comment-post">
+      <textarea  name="content" type="text" placeholder="Add a comment..."></textarea>
+      <button class="btn btn-light" type="submit">Add</button>
+    </div>
   </form>
 
   <% if (deal.comments.length) { %>
@@ -73,17 +75,15 @@
         <% if (comment.author.equals(user?.profile._id)) { %> 
           <div class="card-footer">
             <form action="/deals/<%= deal._id %>/comments/<%= comment._id %>?_method=Delete" method="POST">
-              <button type="submit">Delete</button>
+              <button class="btn btn-light" type="submit">Delete</button>
             </form>
           </div>
         <% } %>
       </div>
-      </li>
     <% }) %>
-    </ul>
-      <% } else { %>
-        <h3>No Comments Yet</h3>
-      <% } %>
+  <% } else { %>
+    <h3>No Comments Yet</h3>
+  <% } %>
 
 </section>
 
