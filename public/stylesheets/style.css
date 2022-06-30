@@ -71,14 +71,6 @@ section {
   padding: 50px;
 }
 
-a {
-  color: #227393;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
 pre {
   font-size: 14px;
 }
@@ -94,8 +86,7 @@ nav > a {
 }
 
 nav > a:hover {
-  text-decoration: underline;
-  color: #2F4858;
+  color: whitesmoke;
 }
 
 .btn {
