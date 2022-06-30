@@ -3,7 +3,7 @@
 **This is a deal-aggregator application created using the MEN stack. This was created as my Unit 2 Project for the General Assembly Software Engineering Immersive. It gives the user the ability to log in using Google OAuth and create, edit, and delete deals. Users that are logged in are also able to leave comments on the details page of each deal.**
 
 **Landing Page**
-![Landing Page Image](/public/images/rt-deals-landing.png)
+![Landing Page Image](/public/images/rt-landing-page.png)
 
 **Add Deal**
 ![Add Deal Image](/public/images/rt-deals-add-deal.png)
@@ -19,6 +19,7 @@
 Default Deal Image - Photo by Karolina Grabowska: https://www.pexels.com/photo/person-holding-a-red-balloon-with-percentage-symbol-5650025/
 
 Favicon - Sale icons created by Pixel perfect - Flaticon
+
 
 ### Future Goals
 
