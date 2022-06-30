@@ -2,35 +2,30 @@
 <%- include('../partials/nav') %>
 
 <section class="add-deal-section">
-  <h1>Deals!</h1>
+  <h1>Add a deal!</h1>
   <h2>Retail therapy is the best form of therapy</h2>
   <% if (user) { %>
-    <h2>Add a deal!</h2>
     <form class="new-deal-form" action="/deals" method="POST">
-      <label>
-        Deal Title: 
-        <input type="text" name="name" autocomplete="off">
-      </label>
-      <br>
-      <label>
-        Original Price: $
-        <input type="number" name="origPrice" autocomplete="off">
-      </label>
-      <br> 
-      <label>
-        Sale Price: $
-        <input type="number" name="salePrice" autocomplete="off">
-      </label>
-      <br> 
-      <label>
-        Deal Link:
-        <input type="url" name="storeLink" autocomplete="off">
-      </label>
-      <br> 
-      <label>
-        Details:
-        <input type="text" name="details" autocomplete="off">
-      </label>
+      <div class='form-line'>
+        <h3>Deal Title: </h3>
+        <input type="text" name="name" autocomplete="off" placeholder="Ex. LG Monitor, Moisturizer, Office Chair">
+      </div>
+      <div class='form-line'>
+        <h3>Original Price: </h3>
+        <input type="number" name="origPrice" autocomplete="off" placeholder="Full Dollar Amount (ex. 200)">
+      </div>
+      <div class='form-line'>
+        <h3>Sale Price: </h3>
+        <input type="number" name="salePrice" autocomplete="off" placeholder="Full Dollar Amount (ex. 200)">
+      </div>
+      <div class='form-line'>
+        <h3>Deal Link: </h3>
+        <input type="url" name="storeLink" autocomplete="off" placeholder="Post URL here...">
+      </div>
+      <div class='form-line'>
+        <h3>Details: </h3>
+        <input type="text" name="details" autocomplete="off"" placeholder="Post any details here...">
+      </div>
       <br>
       <button class="add-deal-btn btn btn-primary" type="submit">Add Deal</button> 
     </form>
