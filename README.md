@@ -8,8 +8,6 @@
 
 Link to the Trello used for planning [Link](https://trello.com/b/6rIRJTQq/ga-sei-unit-2-projectrt-deals)
 
----
-
 **Landing Page**
 ![Landing Page Image](/public/images/rt-landing-page.png)
 
@@ -18,8 +16,6 @@ Link to the Trello used for planning [Link](https://trello.com/b/6rIRJTQq/ga-sei
 
 **Deal Details**
 ![Details Page](/public/images/rt-deals-details.png)
-
----
 
 ## Technologies Used
 
@@ -33,8 +29,6 @@ Link to the Trello used for planning [Link](https://trello.com/b/6rIRJTQq/ga-sei
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
----
-
 
 ## Attributions  
 
@@ -43,8 +37,6 @@ Link to the Trello used for planning [Link](https://trello.com/b/6rIRJTQq/ga-sei
 - Default Deal Image - Photo by Karolina Grabowska: https://www.pexels.com/photo/person-holding-a-red-balloon-with-percentage-symbol-5650025/
 - Favicon - Sale icons created by Pixel perfect - Flaticon
 
----
-
 ## Future Goals
 
 - Add functionality to grab image from deal url and display in each deal card
@@ -52,8 +44,6 @@ Link to the Trello used for planning [Link](https://trello.com/b/6rIRJTQq/ga-sei
 - Voting system to deals and comments for each deal
 - Create sorting functionality for deals to let user sort by 'Most Popular' deals and 'Most Recent' deals
 - Add 'expired' option to deals and change the CSS for deals that have expired
-
----
 
 ## Special Thanks
 
