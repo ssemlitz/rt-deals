@@ -4,23 +4,23 @@
 <section class="details-section">
   <h1>Details!</h1>
     <form class="details-form" action="/deals" method="POST">
-      <label>
+      <label class="detail-label">
         Name: <%= deal.name %> 
       </label>
       <br>
-      <label>
+      <label class="detail-label">
         Original Price: $ <%= deal.origPrice %> 
       </label>
       <br> 
-      <label>
+      <label class="detail-label">
         Sale Price: $ <%= deal.salePrice %> 
       </label> 
       <br>
-      <label>
+      <label class="detail-label">
         Details: <%= deal.details %> 
       </label>
       <br>
-      <label>
+      <label class="detail-label">
         See Deal Here: <a target="_blank" href="<%= deal.storeLink %>">DEAL LINK</a>
       </label> 
       <br>

@@ -106,6 +106,7 @@ nav > a:hover {
 .card {
   width: 300px;
   margin: 10px;
+  border-color: #DA7F8F;
 }
 
 .card-body {
@@ -200,6 +201,10 @@ nav > a:hover {
   align-items: center;
 }
 
+.detail-label {
+  margin: 0 auto;
+}
+
 .details-btns-grouping {
   display: flex;
   flex-direction: row;
@@ -220,6 +225,7 @@ nav > a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 0;
 }
 
 .comment-card {
