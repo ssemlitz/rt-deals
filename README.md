@@ -12,7 +12,7 @@
 ![Details Page](/public/images/rt-deals-details.png)
 
 ### Technologies Used
-
+**HTML, CSS, JavaScript, Mongoose, MongoDB, Express, Node.js, Git, Github, VS Code**
 
 ### Attributions  
 
