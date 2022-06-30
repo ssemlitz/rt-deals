@@ -12,7 +12,7 @@ Link to the Trello used for planning [Link](https://trello.com/b/6rIRJTQq/ga-sei
 ![Landing Page Image](/public/images/rt-landing-page.png)
 
 **Add Deal**
-![Add Deal Image](/public/images/rt-deals-add-deal.png)
+![Add Deal Image](/public/images/rt-deals-add-deal-page.png)
 
 **Deal Details**
 ![Details Page](/public/images/rt-deals-details.png)
