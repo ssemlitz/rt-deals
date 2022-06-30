@@ -74,7 +74,7 @@ pre {
   font-size: 14px;
 }
 
-nav > a {
+nav > * a {
   margin: 10px 30px;
   text-decoration: none;
   font-size: 24px;
@@ -86,6 +86,28 @@ nav > a {
 
 nav > a:hover {
   color: whitesmoke;
+}
+
+.navbar-btns {
+  display: flex;
+  margin-left: auto;
+  flex-direction: row;
+  padding-left: 7%;
+}
+
+.navbar-btns > a:hover {
+  color: whitesmoke;
+}
+
+.logout-btn {
+  display: flex;
+  text-decoration: none;
+  font-size: 24px;
+  margin-right: 10px;
+  margin-left: auto;
+  color: #2F4858;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn {
@@ -285,3 +307,4 @@ form {
   background-color: white;
   border-radius: 5px;
 }
+

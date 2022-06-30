@@ -4,14 +4,17 @@
 </head>
 <body>
 <nav>
-  <a href="/deals/">ALL DEALS</a>
-  <a href="/deals/new">ADD DEALS</a>
-  <a href="/profiles">DEALERS</a>  
-  <% if (user) { %>
-    <a href="/profiles/<%= user.profile._id %>">SAVED DEALS</a>
-    <a href="/auth/logout">LOGOUT</a>
-  <% } else { %>
-    <a href="/auth/google" class="siwg-link">
+  <div class="navbar-btns">
+    <a href="/deals/">ALL DEALS</a>
+    <a href="/deals/new">ADD DEALS</a>
+    <a href="/profiles">DEALERS</a>  
+    <% if (user) { %>
+      <a href="/profiles/<%= user.profile._id %>">SAVED DEALS</a>
+  </div>
+      <a class="logout-btn" href="/auth/logout">LOGOUT</a>
+    <% } else { %>
+  </div>
+    <a href="/auth/google" class="siwg-link logout-btn">
       <button type="submit" class="siwg">
         <img id="siwg-image" alt="Sign in with Google" />
       </button>
