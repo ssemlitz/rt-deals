@@ -14,8 +14,6 @@ Link to the Trello used for planning [Link](https://trello.com/b/6rIRJTQq/ga-sei
 **Add Deal**
 ![Add Deal Image](/public/images/rt-deals-add-deal.png)
 
-
-sdfasdf
 **Deal Details**
 ![Details Page](/public/images/rt-deals-details.png)
 
