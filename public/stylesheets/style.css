@@ -219,10 +219,20 @@ nav > a:hover {
   margin: 10px;
 }
 
+.comment-text-area{
+  width: 80%;
+  max-width: 700px;
+}
+
 .comments-section,
 .details-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.comment-card {
+  width: 80%;
+  max-width: 700px;
 }

@@ -37,7 +37,17 @@ function create(req, res) {
 
 function show(req, res) {
   Deal.findById(req.params.id)
-  .populate()
+  .populate([
+    {
+      path: 'comments',
+      populate: {
+        path: 'author',
+      },
+    },
+    {
+      path: 'author',
+    },
+  ])
   .then(deal => {
     res.render('deals/show', {
       deal,
@@ -101,6 +111,7 @@ function deleteDeal(req, res) {
 }
 
 function addComment(req, res) {
+  req.body.author = req.user.profile._id
   Deal.findById(req.params.id)
   .then(deal => {
     deal.comments.push(req.body)
