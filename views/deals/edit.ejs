@@ -1,38 +1,33 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<section>
+<section class="edit-deal-section">
   <h1>Edit your deal!</h1>
 
   <% if (user) { %>
-    <h2>Edit your deal!</h2>
-    <form action="/deals/<%= deal._id %>?_method=PUT" method="POST">
-      <label>
-        Deal: 
-        <input type="text" name="name" value="<%= deal.name %>" autocomplete="off">
-      </label>
+    <form class="new-deal-form" action="/deals/<%= deal._id %>?_method=PUT" method="POST">
+      <div class='form-line'>
+        <h3>Deal Title: </h3>
+        <input type="text" name="name" autocomplete="off" value="<%= deal.name %>">
+      </div>
+      <div class='form-line'>
+        <h3>Original Price: </h3>
+        <input type="number" name="origPrice" autocomplete="off" value="<%= deal.origPrice %>">
+      </div>
+      <div class='form-line'>
+        <h3>Sale Price: </h3>
+        <input type="number" name="salePrice" autocomplete="off" value="<%= deal.salePrice %>">
+      </div>
+      <div class='form-line'>
+        <h3>Deal Link: </h3>
+        <input type="url" name="storeLink" autocomplete="off" value="<%= deal.storeLink %>">
+      </div>
+      <div class='form-line'>
+        <h3>Details: </h3>
+        <input type="text" name="details" autocomplete="off"" value="<%= deal.details %>">
+      </div>
       <br>
-      <label>
-        Original Price: $
-        <input type="number" name="origPrice" value="<%= deal.origPrice %>" autocomplete="off">
-      </label>
-      <br> 
-      <label>
-        Sale Price: $
-        <input type="number" name="salePrice" value="<%= deal.salePrice %>" autocomplete="off">
-      </label> 
-      <br>
-      <label>
-        Deal Link:
-        <input type="url" name="storeLink" value="<%= deal.storeLink %>" autocomplete="off">
-      </label>
-      <br> 
-      <label>
-        Details:
-        <input type="text" name="details" value="<%= deal.details %>" autocomplete="off">
-      </label>
-      <br>
-        <button type="submit">Update Deal</button> 
+      <button class="add-deal-btn btn btn-primary" type="submit">Update Deal</button> 
     </form>
   <% } %>
 </section>

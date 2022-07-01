@@ -174,7 +174,8 @@ nav > a:hover {
   justify-content: center;
 }
 
-.add-deal-section {
+.add-deal-section,
+.edit-deal-section {
   display: flex;
   justify-content: center;
   align-items: center;
